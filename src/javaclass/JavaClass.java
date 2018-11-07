@@ -1,21 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javaclass;
 
-/**
- *
- * @author slavnikov
- */
 public class JavaClass {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        boolean gameOver = true;
+        int score = 800;
+        int levelCompleted = 5;
+        int bonus = 100;
+        
+        calculateScore(gameOver, score, levelCompleted, bonus);
     }
     
+    public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
+        if(gameOver) {
+            int finalScore = score + (levelCompleted * bonus);
+            finalScore += 1000;
+            System.out.println("Your final score is " + finalScore + "!");
+        }
+    }
 }
