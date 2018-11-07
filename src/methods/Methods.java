@@ -1,6 +1,6 @@
-package javaclass;
+package methods;
 
-public class JavaClass {
+public class Methods {
 
     public static void main(String[] args) {
         boolean gameOver = true;
