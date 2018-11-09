@@ -1,4 +1,4 @@
-package methods_challenge;
+package methods_challenges;
 
 public class MethodsChallenge {
     
