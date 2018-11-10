@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package methods_challenges;
 
-/**
- *
- * @author slavnikov
- */
 public class TeenNumberChecker {
-    
+    public static boolean hasTeen(int first, int second, int third) {
+        return (first >= 13 && first <= 19) ||
+                (second >= 13 && second <= 19) ||
+                (third >= 13 && third <= 19);
+    }
 }
