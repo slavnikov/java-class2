@@ -23,5 +23,16 @@ public class MethodOverloadingExercises {
     
 //==============================================================================
     
+    public static double area (double radius) {
+        if (radius < 0) { return -1.0; }
+        return Math.pow(radius, 2) * 3.14159;
+    }
     
+    public static double area (double height, double width) {
+        if (height < 0 || width < 0) { return -1.0; }
+        return width * height;
+    }
+    
+//==============================================================================
 }
+
