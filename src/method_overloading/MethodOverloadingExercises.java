@@ -61,5 +61,15 @@ public class MethodOverloadingExercises {
             System.out.println("Neither all are equal or different");
         }
     }
+    
+//==============================================================================
+    
+    public static boolean isCatPlaying(boolean summer, int temp) {
+        if(summer){
+            return temp <= 45 && temp >= 25;
+        } else {
+            return temp <= 35 && temp >=25;
+        }
+    }
 }
 
