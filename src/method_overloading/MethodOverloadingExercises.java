@@ -44,5 +44,22 @@ public class MethodOverloadingExercises {
         long days = minutes / 60 / 24;
         System.out.println(minutes + " min = " + (days / 365) + " y and " + (days % 365) + " d");
     }
+    
+//==============================================================================
+    
+    public static void printEqual(int first, int second, int third) {
+        if(first < 0 || second < 0 || third < 0) {
+            System.out.println("Invalid Value");
+            return;
+        }
+        
+        if (first == second && second == third) {
+            System.out.println("All numbers are equal");    
+        } else if (first != second && first != third && second != third) {
+            System.out.println("All numbers are different");
+        } else {
+            System.out.println("Neither all are equal or different");
+        }
+    }
 }
 
