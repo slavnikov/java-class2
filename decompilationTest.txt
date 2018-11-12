@@ -1,0 +1,14 @@
+package com.skayl.face.ts;
+
+public interface TSInterface<T>
+{
+    boolean configure();
+    
+    boolean connect();
+    
+    boolean write(final T p0);
+    
+    boolean read();
+    
+    boolean registerListener(final TSListener<?> p0);
+}
