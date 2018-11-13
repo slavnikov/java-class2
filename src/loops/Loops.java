@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-        System.out.println(sumDigits(12853));
+        System.out.println(isPalindrome(-1212));
     }
     
     public static void fizzBuzzLoop()  {
@@ -55,5 +55,21 @@ public class Loops {
         }
         
         return total;
+    }
+    
+//==============================================================================
+    
+    public static boolean isPalindrome(int input) {
+        int original = Math.abs(input);
+        int reverse = 0;
+        
+        while (original > 0) {
+            reverse *= 10;
+            
+            reverse += original % 10;
+            original /= 10;
+        }
+        
+        return reverse == Math.abs(input);
     }
 }
