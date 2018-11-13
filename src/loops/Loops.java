@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-        System.out.println(hasSharedDigit(999, 182));
+        System.out.println(getGreatestcommonDivisor(25, 15));
     }
     
     public static void fizzBuzzLoop()  {
@@ -126,5 +126,35 @@ public class Loops {
     
 //==============================================================================
     
+    public static boolean hasSameLastDigit(int first, int second, int third) {
+        if (first < 10 || 
+                first > 1000 || 
+                second < 10 || 
+                second > 1000 || 
+                third < 10 || 
+                third > 1000) 
+        { return false; }
+        
+        int last1 = first % 10;
+        int last2 = second % 10;
+        int last3 = third % 10;
+        
+        return last1 == last2 || last1 == last3 || last2 == last3; 
+    }
     
+//==============================================================================
+    
+    public static int getGreatestCommonDivisor(int first, int second) {
+        if(first < 10 || second < 10) { return -1; }
+        
+        int smaller = first > second ? second : first;
+        int bigger = first > second ? first : second;
+        int gcd = 0;
+        
+        for(int divisor = 1; divisor <= smaller; divisor++) {
+            if(smaller % divisor == 0 && bigger % divisor == 0) { gcd = divisor; }
+        }
+        
+        return gcd;
+    }
 }
