@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-//        System.out.println(numberToWords(10));
+        System.out.println(getLargestPrime(-1));
     }
     
     public static void fizzBuzzLoop()  {
@@ -283,5 +283,38 @@ public class Loops {
         }
         
         return false;
+    }
+    
+//==============================================================================
+    
+//    public static boolean isPrime(int input) {
+//        for (int i = 2; i <= input / 2; i++) {
+//            if (input % i == 0) {
+//                return false;
+//            }
+//        }
+//
+//        return true;
+//    }
+    
+    public static int getLargestPrime(int input) {
+        int output = -1;
+        
+        for(int i = 2; i <= input; i++){
+            if(input % i == 0){
+                int lowestFactor = 1;
+                
+                for(int j = 2; j <= i; j++) {
+                    if (i % j == 0) {
+                        lowestFactor = j;
+                        break;
+                    }
+                }
+                
+                output = i == lowestFactor ? i : output;
+            }
+        }
+        
+        return output;
     }
 }
