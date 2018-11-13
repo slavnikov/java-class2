@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-        System.out.println(getLargestPrime(-1));
+        printSquareStar(10);
     }
     
     public static void fizzBuzzLoop()  {
@@ -287,15 +287,15 @@ public class Loops {
     
 //==============================================================================
     
-//    public static boolean isPrime(int input) {
-//        for (int i = 2; i <= input / 2; i++) {
-//            if (input % i == 0) {
-//                return false;
-//            }
-//        }
-//
-//        return true;
-//    }
+    public static boolean isPrime(int input) {
+        for (int i = 2; i <= input / 2; i++) {
+            if (input % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
     
     public static int getLargestPrime(int input) {
         int output = -1;
@@ -316,5 +316,29 @@ public class Loops {
         }
         
         return output;
+    }
+    
+//==============================================================================
+    
+    public static void printSquareStar(int size) {
+        if(size < 5) { System.out.println("Invalid Value"); return; }
+        
+        String line;
+        
+        for(int i = 1; i <= size; i++) {
+            line = "";
+            for(int j = 1; j <= size; j++) {
+                if(i == 1 || j == 1 || i == size || j == size) {
+                    line += "*";
+                } else if(i == j) {
+                    line += "*";
+                } else if(j == size - i + 1) {
+                    line += "*";
+                } else {
+                    line += " ";
+                }
+            }
+            System.out.println(line);
+        }
     }
 }
