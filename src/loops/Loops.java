@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-        System.out.println(getGreatestcommonDivisor(25, 15));
+        System.out.println(getGreatestCommonDivisor(25, 15));
     }
     
     public static void fizzBuzzLoop()  {
@@ -156,5 +156,15 @@ public class Loops {
         }
         
         return gcd;
+    }
+    
+//==============================================================================
+    
+    public static void printFactors(int input) {
+        if(input < 1) { System.out.println("Invalid Value"); }
+        
+        for (int i = 1; i <= input; i++) {
+            if(input % i == 0) { System.out.println(i); }
+        }
     }
 }
