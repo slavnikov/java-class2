@@ -167,4 +167,18 @@ public class Loops {
             if(input % i == 0) { System.out.println(i); }
         }
     }
+    
+//==============================================================================
+    
+    public static boolean isPerfectNumber(int input) {
+        if(input < 1) { return false; }
+        
+        int total = 0;
+        
+        for(int factor = 1; factor < input; factor++) {
+            if (input % factor == 0) { total += factor; }
+        }
+        
+        return total == input;
+    }
 }
