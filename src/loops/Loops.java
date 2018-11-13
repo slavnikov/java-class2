@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-        fizzBuzzLoop();
+        System.out.println(sumDigits(12853));
     }
     
     public static void fizzBuzzLoop()  {
@@ -40,5 +40,20 @@ public class Loops {
         }
         
         return sum;
+    }
+    
+//==============================================================================
+    
+    public static int sumDigits(int input) {
+        if (input < 10) {return -1;}
+        
+        int total = 0;
+        
+        while (input > 0) {
+            total += input % 10;
+            input /= 10;
+        }
+        
+        return total;
     }
 }
