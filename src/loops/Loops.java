@@ -214,7 +214,7 @@ public class Loops {
     public static void numberToWords(int input) {
         if (input < 0) { System.out.println("Invalid Value"); }
         
-        String word = "";
+        String word;
         int reversed = reverse(input);
         int digitCount = getDigitCount(input);
         
@@ -260,5 +260,28 @@ public class Loops {
             
             System.out.println(word);
         }
+    }
+    
+//==============================================================================
+    
+    public static boolean canPack(int bigBags, int smallBags, int goal) {
+        if(bigBags < 0 || smallBags < 0 || goal < 0) { return false; }
+        
+        for(int bigCount = bigBags; bigCount >= 0; bigCount--) {
+            int total = bigCount * 5;
+            
+            if(total < goal) {
+                int smallCount = 1;
+                
+                while(total < goal && smallCount <= smallBags) {
+                    total++;
+                    smallCount++;
+                }
+            }
+            
+            if (total == goal) { return true; }
+        }
+        
+        return false;
     }
 }
