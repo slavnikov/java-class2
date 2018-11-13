@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-        System.out.println(getGreatestCommonDivisor(25, 15));
+//        System.out.println(numberToWords(10));
     }
     
     public static void fizzBuzzLoop()  {
@@ -180,5 +180,85 @@ public class Loops {
         }
         
         return total == input;
+    }
+    
+//==============================================================================
+    
+    public static int getDigitCount(int input) {
+        if(input < 0) { return -1; }
+        
+        int count = 0;
+        
+        do {
+            count += 1;
+            input /= 10;
+        } while (input > 0);
+        
+        return count;
+    }
+    
+    public static int reverse(int input) {
+        int original = Math.abs(input);
+        int reverse = 0;
+        
+        while (original > 0) {
+            reverse *= 10;
+            
+            reverse += original % 10;
+            original /= 10;
+        }
+        
+        return input > 0 ? reverse : reverse * -1;
+    }
+    
+    public static void numberToWords(int input) {
+        if (input < 0) { System.out.println("Invalid Value"); }
+        
+        String word = "";
+        int reversed = reverse(input);
+        int digitCount = getDigitCount(input);
+        
+        for(int i = 0; i < digitCount; i++) {
+            int number = reversed % 10;
+            reversed /= 10;
+            
+            switch(number) {
+                case 0:
+                    word = "Zero";
+                    break;
+                case 1:
+                    word = "One";
+                    break;
+                case 2:
+                    word = "Two";
+                    break;
+                case 3:
+                    word = "Three";
+                    break;
+                case 4:
+                    word = "Four";
+                    break;
+                case 5:
+                    word = "Five";
+                    break;
+                case 6:
+                    word = "Six";
+                    break;
+                case 7:
+                    word = "Seven";
+                    break;
+                case 8:
+                    word = "Eight";
+                    break;
+                case 9:
+                    word = "Nine";
+                    break;
+                default:
+                    word = "OTHER";
+                    break;
+            }
+            
+            System.out.println(word);
+        }
     }
 }
