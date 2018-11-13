@@ -1,9 +1,11 @@
 package loops;
 
+import java.util.Scanner;
+
 public class Loops {
     
     public static void main(String[] args) {
-        printSquareStar(10);
+        addUserNumbers();
     }
     
     public static void fizzBuzzLoop()  {
@@ -340,5 +342,43 @@ public class Loops {
             }
             System.out.println(line);
         }
+    }
+    
+//==============================================================================
+    
+    public static void scannerUse() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input birth year: ");
+        int year = scanner.nextInt();
+        
+        scanner.nextLine(); // handle next line charecter
+        
+        System.out.println("Input name: ");
+        String name = scanner.nextLine();
+        
+        System.out.println(name + "'s age is " + (2018 - year));
+        scanner.close();
+    }
+    
+//==============================================================================
+    
+    public static void addUserNumbers() {
+        int total = 0;
+        int count = 1;
+        Scanner scanner = new Scanner(System.in);
+        
+        while(count <= 10) {
+            System.out.println("enter number #" + count + ":");
+            
+            if(scanner.hasNextInt()) {
+                total += scanner.nextInt();
+                count++;
+            } else {
+                scanner.nextLine();
+                System.out.println("Could not parse your number input.");
+            }
+        }
+        
+        System.out.println(total);
     }
 }
