@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-        System.out.println(isPalindrome(-1212));
+        System.out.println(sumFirstAndLastDigit(999));
     }
     
     public static void fizzBuzzLoop()  {
@@ -72,4 +72,22 @@ public class Loops {
         
         return reverse == Math.abs(input);
     }
+    
+//==============================================================================
+    
+    public static int sumFirstAndLastDigit(int input) {
+        if (input < 0) { return -1; }
+        
+        int lastDigit = input % 10;
+        
+        while(input >= 10) {
+            input /= 10;
+        }
+        
+        return lastDigit + input;
+    }
+    
+//==============================================================================
+    
+    
 }
