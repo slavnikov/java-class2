@@ -89,5 +89,18 @@ public class Loops {
     
 //==============================================================================
     
+    public static int getEvenDigitSum(int input) {
+        if (input < 0) { return -1; }
+        
+        int total = 0;
+        
+        while (input > 0) {
+            int digit = input % 10;
+            if (digit % 2 == 0) { total += digit; }
+            input /= 10;
+        }
+        
+        return total;
+    }
     
 }
