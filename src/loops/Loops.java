@@ -3,7 +3,7 @@ package loops;
 public class Loops {
     
     public static void main(String[] args) {
-        System.out.println(sumFirstAndLastDigit(999));
+        System.out.println(hasSharedDigit(999, 182));
     }
     
     public static void fizzBuzzLoop()  {
@@ -101,6 +101,27 @@ public class Loops {
         }
         
         return total;
+    }
+    
+//==============================================================================
+    
+    public static boolean hasSharedDigit(int first , int second) {
+        if (first < 10 || first > 99 || second < 10 || second > 99) { return false; }
+        
+        while (first > 0) {
+            int digitOfFist = first % 10;
+            int copyOfSecond = second;
+            
+            while (copyOfSecond > 0) {
+                int digitOfSecond = copyOfSecond % 10;
+                if (digitOfFist == digitOfSecond) { return true; }
+                copyOfSecond /= 10;
+            }
+            
+            first /= 10;
+        }
+        
+        return false;
     }
     
 }
